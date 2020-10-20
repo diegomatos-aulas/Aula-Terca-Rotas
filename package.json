@@ -1,0 +1,14 @@
+{
+  "name": "aula-terca-rotas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Diego Matos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
