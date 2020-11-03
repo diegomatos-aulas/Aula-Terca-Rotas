@@ -3,21 +3,15 @@ const express = require("express");
 const app = express();
 
 app.use("/", express.static("./public"));
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 
-app.get("/", (request, response) => {
-  console.log("Os parametros são:");
-  console.log(request.query);
-});
+const rotaHome = require("./routes/home.js");
+/* const rotaSucesso = require("./routes/sucesso.js");
+const rotaError = require("./routes/error.js"); */
 
-app.get("/buscar/:nome", (request, response) => {
-  console.log(request.params);
-});
-
-app.post("/", (request, response) => {
-  console.log(request.body);
-  response.send("Tudo certo !")
-});
+app.use("/raiz", rotaHome);
+/* app.use("/sucesso", rotaSucesso);
+app.use("/error", rotaError); */
 
 app.listen(80, () => {
   console.log("Servidor está ligado !!!")
